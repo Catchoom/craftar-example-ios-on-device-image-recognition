@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>10AEAE97-EC45-4BE0-8325-D104BE521BCF</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CatchoomSDK_Examples</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>8A2FE4C1CD8C2A9F3D12ABC42EC7C87ABC44572D</key>
+		<string>ssh://github.com/Catchoom/catchoom-example-ios-image-recognition.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CatchoomSDK_Examples.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>8A2FE4C1CD8C2A9F3D12ABC42EC7C87ABC44572D</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/Catchoom/catchoom-example-ios-image-recognition.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>8A2FE4C1CD8C2A9F3D12ABC42EC7C87ABC44572D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8A2FE4C1CD8C2A9F3D12ABC42EC7C87ABC44572D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>catchoom-example-ios-image-recognition</string>
+		</dict>
+	</array>
+</dict>
+</plist>
