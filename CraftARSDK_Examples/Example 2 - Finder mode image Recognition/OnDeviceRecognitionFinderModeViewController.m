@@ -20,12 +20,12 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 #import "OnDeviceRecognitionFinderModeViewController.h"
-#import <SDK_Recognition_Offline/CraftARSDK_IR.h>
-#import <SDK_Recognition_Offline/OfflineIR.h>
+#import <CraftAROnDeviceRecognitionSDK/CraftARSDK_IR.h>
+#import <CraftAROnDeviceRecognitionSDK/CraftAROnDeviceIR.h>
 
 @interface OnDeviceRecognitionFinderModeViewController () <CraftARSDKProtocol, SearchProtocol, UIAlertViewDelegate> {
     CraftARSDK_IR *_sdk;
-    OfflineIR *_oir;
+    CraftAROnDeviceIR *_oir;
     bool _captureStarted;
     NSDate *mSearchStartTime;
 }
@@ -79,14 +79,14 @@
     self._scanningOverlay.hidden = NO;
     [self._scanningOverlay setNeedsDisplay];
     
-    // Get Offline Recognition class (for on-device searches)
+    // Get On Device Image Recognition class (for on-device searches)
     // and set it as the search controller delegate for the SDK
     // the SDK will take care of sending the camera capture frames to the search controller
     // and to manage the Finder Mode status.
-    _oir = [OfflineIR sharedOfflineIR];
+    _oir = [CraftAROnDeviceIR sharedCraftAROnDeviceIR];
     _sdk.searchControllerDelegate = _oir;
     
-    // Set the view controller as delegate of the OfflineIR to recieve the
+    // Set the view controller as delegate of the OnDeviceIR to recieve the
     // search results
     _oir.delegate = self;
     

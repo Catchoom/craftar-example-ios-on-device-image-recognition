@@ -21,12 +21,12 @@
 // DEALINGS IN THE SOFTWARE.
 
 #import "OnDeviceRecognitionSingleShotViewController.h"
-#import <SDK_Recognition_Offline/CraftARSDK_IR.h>
-#import <SDK_Recognition_Offline/OfflineIR.h>
+#import <CraftAROnDeviceRecognitionSDK/CraftARSDK_IR.h>
+#import <CraftAROnDeviceRecognitionSDK/CraftAROnDeviceIR.h>
 
 @interface OnDeviceRecognitionSingleShotViewController () <CraftARSDKProtocol, SearchProtocol> {
     CraftARSDK_IR *_sdk;
-    OfflineIR *_oir;
+    CraftAROnDeviceIR *_oir;
 }
 
 @end
@@ -72,12 +72,12 @@
 - (void) didStartCapture {
     self._previewOverlay.hidden = NO;
     
-    // Get Offline Recognition class (for on-device searches)
+    // Get On Device Image Recognition class (for on-device searches)
     // and set it as the search controller delegate for the SDK
-    _oir = [OfflineIR sharedOfflineIR];
+    _oir = [CraftAROnDeviceIR sharedCraftAROnDeviceIR];
     _sdk.searchControllerDelegate = _oir;
     
-    // Set the view controller as delegate of the OfflineIR to recieve the
+    // Set the view controller as delegate of the OnDeviceIR to recieve the
     // search results
     _oir.delegate = self;
 }

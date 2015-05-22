@@ -27,9 +27,9 @@
 		A039ABD118A4F0510050D6F7 /* questionMark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A039ABC518A4F0510050D6F7 /* questionMark@2x.png */; };
 		A0654D811B0505D3005D2027 /* CraftARResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A0654D7F1B0505D3005D2027 /* CraftARResources.bundle */; };
 		A0654D911B0A5272005D2027 /* catchoomcooldemoBundle.zip in Resources */ = {isa = PBXBuildFile; fileRef = A0654D901B0A5272005D2027 /* catchoomcooldemoBundle.zip */; };
-		A0654D931B0A6236005D2027 /* SDK_Recognition_Offline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0654D921B0A6236005D2027 /* SDK_Recognition_Offline.framework */; };
-		A0654D941B0A6236005D2027 /* SDK_Recognition_Offline.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A0654D921B0A6236005D2027 /* SDK_Recognition_Offline.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A084A2FC1875BD1100EF452B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A084A2FB1875BD1100EF452B /* Main.storyboard */; };
+		A0C4EBB71B0F1D83002A258C /* CraftAROnDeviceRecognitionSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C4EBB61B0F1D83002A258C /* CraftAROnDeviceRecognitionSDK.framework */; };
+		A0C4EBB81B0F1D83002A258C /* CraftAROnDeviceRecognitionSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A0C4EBB61B0F1D83002A258C /* CraftAROnDeviceRecognitionSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A0D096821855E42100D231F0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D096811855E42100D231F0 /* MobileCoreServices.framework */; };
 		A0D096841855E42F00D231F0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D096831855E42F00D231F0 /* SystemConfiguration.framework */; };
 		A0D096881855E45000D231F0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D096871855E45000D231F0 /* AVFoundation.framework */; };
@@ -38,13 +38,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		A0654D951B0A6237005D2027 /* Embed Frameworks */ = {
+		A0C4EBB51B0F1391002A258C /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A0654D941B0A6236005D2027 /* SDK_Recognition_Offline.framework in Embed Frameworks */,
+				A0C4EBB81B0F1D83002A258C /* CraftAROnDeviceRecognitionSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,8 +79,8 @@
 		A039ABC518A4F0510050D6F7 /* questionMark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "questionMark@2x.png"; path = "Resources/questionMark@2x.png"; sourceTree = "<group>"; };
 		A0654D7F1B0505D3005D2027 /* CraftARResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = CraftARResources.bundle; path = CraftARSDK_Examples/ExternalFrameworks/CraftARResources.bundle; sourceTree = "<group>"; };
 		A0654D901B0A5272005D2027 /* catchoomcooldemoBundle.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; name = catchoomcooldemoBundle.zip; path = Resources/catchoomcooldemoBundle.zip; sourceTree = "<group>"; };
-		A0654D921B0A6236005D2027 /* SDK_Recognition_Offline.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDK_Recognition_Offline.framework; path = CraftARSDK_Examples/ExternalFrameworks/SDK_Recognition_Offline.framework; sourceTree = "<group>"; };
 		A084A2FB1875BD1100EF452B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		A0C4EBB61B0F1D83002A258C /* CraftAROnDeviceRecognitionSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = CraftAROnDeviceRecognitionSDK.framework; path = "/Users/luis/Library/Developer/Xcode/DerivedData/craftar-sdk-ios-v4-azpizkjhbzccpdgkirapwkmriqog/Build/Products/Debug-iphoneos/CraftAROnDeviceRecognitionSDK.framework"; sourceTree = "<absolute>"; };
 		A0D096811855E42100D231F0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		A0D096831855E42F00D231F0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A0D096851855E43D00D231F0 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
@@ -94,11 +94,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0654D931B0A6236005D2027 /* SDK_Recognition_Offline.framework in Frameworks */,
 				A0D0968A1855E46C00D231F0 /* CoreMedia.framework in Frameworks */,
 				A0D096881855E45000D231F0 /* AVFoundation.framework in Frameworks */,
 				A0D096841855E42F00D231F0 /* SystemConfiguration.framework in Frameworks */,
 				A0D096821855E42100D231F0 /* MobileCoreServices.framework in Frameworks */,
+				A0C4EBB71B0F1D83002A258C /* CraftAROnDeviceRecognitionSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,7 +128,7 @@
 		A01F3D6B1845FA5A003D8D62 = {
 			isa = PBXGroup;
 			children = (
-				A0654D921B0A6236005D2027 /* SDK_Recognition_Offline.framework */,
+				A0C4EBB61B0F1D83002A258C /* CraftAROnDeviceRecognitionSDK.framework */,
 				A0654D7F1B0505D3005D2027 /* CraftARResources.bundle */,
 				A01F3D7D1845FA5A003D8D62 /* CraftARSDK_Examples */,
 				A01F3D761845FA5A003D8D62 /* Frameworks */,
@@ -221,7 +221,7 @@
 				A01F3D701845FA5A003D8D62 /* Sources */,
 				A01F3D711845FA5A003D8D62 /* Frameworks */,
 				A01F3D721845FA5A003D8D62 /* Resources */,
-				A0654D951B0A6237005D2027 /* Embed Frameworks */,
+				A0C4EBB51B0F1391002A258C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

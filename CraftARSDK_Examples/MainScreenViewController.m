@@ -21,14 +21,14 @@
 // DEALINGS IN THE SOFTWARE.
 
 #import "MainScreenViewController.h"
-#import <SDK_Recognition_Offline/CraftARSDK_IR.h>
-#import <SDK_Recognition_Offline/CraftARCollectionManager.h>
-#import <SDK_Recognition_Offline/OfflineIR.h>
+#import <CraftAROnDeviceRecognitionSDK/CraftARSDK_IR.h>
+#import <CraftAROnDeviceRecognitionSDK/CraftARCollectionManager.h>
+#import <CraftAROnDeviceRecognitionSDK/CraftAROnDeviceIR.h>
 
 @interface MainScreenViewController () {
     CraftARSDK_IR* mSDK;
     CraftARCollectionManager* mCollectionManager;
-    OfflineIR* mOfflineIR;
+    CraftAROnDeviceIR* mOnDeviceIR;
 }
 
 @end
@@ -45,14 +45,16 @@
     // Get the colleciton manager
     mCollectionManager = [CraftARCollectionManager sharedCollectionManager];
     
-    // Get the Offline IR
-    mOfflineIR = [OfflineIR sharedOfflineIR];
+    // Get the On Device IR
+    mOnDeviceIR = [CraftAROnDeviceIR sharedCraftAROnDeviceIR];
     
     // Get the collection if it is already in the device
-    CraftARCollection* demoCollection = [mCollectionManager getCollectionWithToken:@"catchoomcooldemo"];
+    CraftARError* error;
+    CraftARCollection* demoCollection = [mCollectionManager getCollectionWithToken:@"catchoomcooldemo" andError:&error];
     
     // if it is not in the device load it
     if (demoCollection == nil) {
+        NSLog(@"Error getting collection: %@", [error localizedDescription]);
         [self addDemoCollection];
     } else {
         [self loadDemoCollection: demoCollection];
@@ -108,7 +110,7 @@
     MainScreenViewController* myself = self;
     
     // Load the collection before doing any searches
-    [mOfflineIR setCollection:collection setActive:YES withOnProgress:^(float progress) {
+    [mOnDeviceIR setCollection:collection setActive:YES withOnProgress:^(float progress) {
         NSLog(@"Load collection progress: %f", progress);
     } onSuccess:^{
         // Now the collection is ready for recognition
