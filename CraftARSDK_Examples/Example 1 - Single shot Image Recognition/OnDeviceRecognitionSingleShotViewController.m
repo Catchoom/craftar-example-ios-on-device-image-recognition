@@ -87,7 +87,6 @@
     self._scanningOverlay.hidden = NO;
     [self._scanningOverlay setNeedsDisplay];
     [_sdk singleShotSearch];
-    [[_sdk getCamera] stopCapture];
     
 }
 
