@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:CatchoomSDK_Examples.xcodeproj">
+      location = "self:CraftAR-On-Device-IR-SDK_Examples.xcodeproj">
    </FileRef>
 </Workspace>
