@@ -15,7 +15,7 @@ The [iOS On-Device Image Recognition SDK](http://catchoom.com/documentation/on-d
 Image Recognition requests on the device. The display of the result of the request
 of each is up to you.
 
-This document describes mainly the Examples of different uses of the Service and the Image Recognition SDK.
+This document describes mainly the Examples of different uses of the Service and the On-Device Image Recognition SDK.
 General use of the SDK can be found in the Documentation webpage for the [iOS On-Device Image Recognition SDK](http://catchoom.com/documentation/on-device-image-recognition-sdk/ios-on-device-image-recognition-sdk/). Complete SDK documentation of the classes can be found within the distribution of the SDK itself.
 
 
