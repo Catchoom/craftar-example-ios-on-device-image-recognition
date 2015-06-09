@@ -441,7 +441,7 @@
                                                 <rect key="frame" x="20" y="329" width="280" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="How we crafted the scene:">
+                                                    <fragment content="How we created this experience:">
                                                         <attributes>
                                                             <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
@@ -518,7 +518,7 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <attributedString key="attributedText">
                                                     <fragment>
-                                                        <string key="content">1. Upload the reference image to an on-device collection. 2. Set the item's name and URL 4. Publish 5. Generate and download the bundle.</string>
+                                                        <string key="content">1. Upload the reference images to an on-device collection. 2. Set the items' names and URLs 4. Publish 5. Generate and download the bundle.</string>
                                                         <attributes>
                                                             <font key="NSFont" size="14" name="HelveticaNeue"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.5"/>
@@ -586,7 +586,7 @@
                                                 <rect key="frame" x="20" y="333" width="280" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="How we crafted the scene:">
+                                                    <fragment content="How we created this experience:">
                                                         <attributes>
                                                             <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             <font key="NSFont" size="17" name="HelveticaNeue-Bold"/>
@@ -663,7 +663,7 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <attributedString key="attributedText">
                                                     <fragment>
-                                                        <string key="content">1. Upload the reference image to an on-device collection. 2. Set the item's name and URL 4. Publish 5. Generate and download the bundle.</string>
+                                                        <string key="content">1. Upload the reference images to an on-device collection. 2. Set the items' names and URLs 4. Publish 5. Generate and download the bundle.</string>
                                                         <attributes>
                                                             <font key="NSFont" size="14" name="HelveticaNeue"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.5"/>
