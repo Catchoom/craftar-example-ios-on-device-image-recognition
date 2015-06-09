@@ -1,0 +1,10 @@
+on run argv
+	tell application "Xcode"
+		activate
+		display alert "Missing SDK files" message "Download the Catchoom SDK and copy the files to the 'CatchoomSDK_Examples/ExternalFrameworks/' directory in this project." as critical buttons {"OK, got it!", "Download SDK"} default button "Download SDK"
+		set response to button returned of the result
+	end tell
+	tell application "Finder"
+		if response is "Download SDK" then open location "http://catchoom.com/documentation/sdk/?utm_source=ios-sdk&utm_medium=xcode-linker-error-message&utm_campaign=sdk-examples"
+	end tell
+end run
