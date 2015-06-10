@@ -91,7 +91,7 @@
     MainScreenViewController* myself = self;
     
     // Get the collection bundle file that contains the image database for recognition
-    NSString* bundlePath = [[NSBundle mainBundle] pathForResource:@"c68aa5c3f6164c3abb6dcdc5fa698ee9" ofType: @"zip"];
+    NSString* bundlePath = [[NSBundle mainBundle] pathForResource:@"catchoomcooldemoBundle" ofType: @"zip"];
     
     // Add the collection to the device
     [mCollectionManager addCollectionFromBundle:bundlePath withOnProgress:^(float progress) {
