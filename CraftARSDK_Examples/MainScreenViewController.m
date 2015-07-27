@@ -57,7 +57,11 @@
         NSLog(@"Error getting collection: %@", [error localizedDescription]);
         [self addDemoCollection];
     } else {
-        [self loadDemoCollection: demoCollection];
+        [demoCollection syncWithOnSuccess:^{
+            [self loadDemoCollection: demoCollection];
+        } andOnError:^(NSError *error) {
+            NSLog(@"Error synchronizing collection: %@", [error localizedDescription]);
+        }];
     }
     
     self._finderModeRecognitionButton.enabled = NO;
@@ -90,10 +94,21 @@
     self._loadingView.hidden = NO;
     MainScreenViewController* myself = self;
     
-    // Get the collection bundle file that contains the image database for recognition
+    // Add Collection bundle from the CraftAR Service
+    [mCollectionManager addCollectionWithToken:@"catchoomcooldemo" withOnProgress:^(float progress) {
+        NSLog(@"Add bundle progress: %f", progress);
+    } andOnSuccess:^(CraftARCollection *collection) {
+        // On success, we load the collection for recognition
+        [myself loadDemoCollection: collection];
+    } andOnError:^(NSError *error) {
+        NSLog(@"Error adding collection: %@", [error localizedDescription]);
+    }];
+    
+    /*
+    // Alternatively, you can get the collection bundle file that contains the image database for recognition
     NSString* bundlePath = [[NSBundle mainBundle] pathForResource:@"c68aa5c3f6164c3abb6dcdc5fa698ee9" ofType: @"zip"];
     
-    // Add the collection to the device
+    // And add it to the device
     [mCollectionManager addCollectionFromBundle:bundlePath withOnProgress:^(float progress) {
         NSLog(@"Add bundle progress: %f", progress);
     } andOnSuccess:^(CraftARCollection *collection) {
@@ -102,6 +117,7 @@
     } andOnError:^(CraftARError *error) {
         NSLog(@"Error adding collection: %@", [error localizedDescription]);
     }];
+     */
 }
 
 - (void) loadDemoCollection: (CraftARCollection*) collection {

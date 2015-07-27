@@ -18,6 +18,7 @@
 		A01F3D841845FA5A003D8D62 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A01F3D831845FA5A003D8D62 /* main.m */; };
 		A01F3D881845FA5A003D8D62 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A01F3D871845FA5A003D8D62 /* AppDelegate.m */; };
 		A01F3DAA1846043C003D8D62 /* MainScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A01F3DA91846043C003D8D62 /* MainScreenViewController.m */; };
+		A02D5EFB1B62926800919274 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A02D5EFA1B62926800919274 /* Pods.framework */; };
 		A039ABC818A4F0510050D6F7 /* craftAR_c.png in Resources */ = {isa = PBXBuildFile; fileRef = A039ABBC18A4F0510050D6F7 /* craftAR_c.png */; };
 		A039ABC918A4F0510050D6F7 /* craftAR_logo-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = A039ABBD18A4F0510050D6F7 /* craftAR_logo-iPad.png */; };
 		A039ABCA18A4F0510050D6F7 /* craftAR_logo-iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A039ABBE18A4F0510050D6F7 /* craftAR_logo-iPad@2x.png */; };
@@ -69,6 +70,7 @@
 		A01F3D871845FA5A003D8D62 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A01F3DA81846043C003D8D62 /* MainScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainScreenViewController.h; sourceTree = "<group>"; };
 		A01F3DA91846043C003D8D62 /* MainScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainScreenViewController.m; sourceTree = "<group>"; };
+		A02D5EFA1B62926800919274 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = CraftARSDK_Examples/ExternalFrameworks/Pods.framework; sourceTree = "<group>"; };
 		A039ABBC18A4F0510050D6F7 /* craftAR_c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = craftAR_c.png; path = Resources/craftAR_c.png; sourceTree = "<group>"; };
 		A039ABBD18A4F0510050D6F7 /* craftAR_logo-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "craftAR_logo-iPad.png"; path = "Resources/craftAR_logo-iPad.png"; sourceTree = "<group>"; };
 		A039ABBE18A4F0510050D6F7 /* craftAR_logo-iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "craftAR_logo-iPad@2x.png"; path = "Resources/craftAR_logo-iPad@2x.png"; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A02D5EFB1B62926800919274 /* Pods.framework in Frameworks */,
 				A0D0968A1855E46C00D231F0 /* CoreMedia.framework in Frameworks */,
 				A0D096881855E45000D231F0 /* AVFoundation.framework in Frameworks */,
 				A0D096841855E42F00D231F0 /* SystemConfiguration.framework in Frameworks */,
@@ -128,6 +131,7 @@
 		A01F3D6B1845FA5A003D8D62 = {
 			isa = PBXGroup;
 			children = (
+				A02D5EFA1B62926800919274 /* Pods.framework */,
 				A01635361B185DF5008D6762 /* CraftAROnDeviceRecognitionSDK.framework */,
 				A0654D7F1B0505D3005D2027 /* CraftARResources.bundle */,
 				A01F3D7D1845FA5A003D8D62 /* CraftARSDK_Examples */,
