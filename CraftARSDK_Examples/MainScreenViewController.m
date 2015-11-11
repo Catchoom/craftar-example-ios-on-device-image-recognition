@@ -21,12 +21,12 @@
 // DEALINGS IN THE SOFTWARE.
 
 #import "MainScreenViewController.h"
-#import <CraftAROnDeviceRecognitionSDK/CraftARSDK_IR.h>
+#import <CraftAROnDeviceRecognitionSDK/CraftARSDK.h>
 #import <CraftAROnDeviceRecognitionSDK/CraftARCollectionManager.h>
 #import <CraftAROnDeviceRecognitionSDK/CraftAROnDeviceIR.h>
 
 @interface MainScreenViewController () {
-    CraftARSDK_IR* mSDK;
+    CraftARSDK* mSDK;
     CraftARCollectionManager* mCollectionManager;
     CraftAROnDeviceIR* mOnDeviceIR;
 }
@@ -39,7 +39,7 @@
 {
     [super viewDidLoad];
     
-    mSDK = [CraftARSDK_IR sharedCraftARSDK_IR];
+    mSDK = [CraftARSDK sharedCraftARSDK];
     
     
     // Get the colleciton manager
@@ -50,7 +50,7 @@
     
     // Get the collection if it is already in the device
     CraftARError* error;
-    CraftARCollection* demoCollection = [mCollectionManager getCollectionWithToken:@"catchoomcooldemo" andError:&error];
+    CraftAROnDeviceCollection* demoCollection = nil;//[mCollectionManager getCollectionWithToken:@"imagerecognition" andError:&error];
     
     // if it is not in the device load it
     if (demoCollection == nil) {
@@ -66,8 +66,8 @@
     
     self._finderModeRecognitionButton.enabled = NO;
     self._singleShotRecognitionButton.enabled = NO;
-    self._finderModeRecognitionButton.hidden = YES;
-    self._singleShotRecognitionButton.hidden = YES;
+    self._finderModeRecognitionButtonImage.hidden = YES;
+    self._singleShotRecognitionButtonImage.hidden = YES;
     
 }
 
@@ -93,34 +93,34 @@
 - (void) addDemoCollection {
     self._loadingView.hidden = NO;
     MainScreenViewController* myself = self;
-    
+    /*
     // Add Collection bundle from the CraftAR Service
     [mCollectionManager addCollectionWithToken:@"catchoomcooldemo" withOnProgress:^(float progress) {
         NSLog(@"Add bundle progress: %f", progress);
-    } andOnSuccess:^(CraftARCollection *collection) {
+    } andOnSuccess:^(CraftAROnDeviceCollection *collection) {
         // On success, we load the collection for recognition
         [myself loadDemoCollection: collection];
     } andOnError:^(NSError *error) {
         NSLog(@"Error adding collection: %@", [error localizedDescription]);
-    }];
+    }];*/
     
-    /*
+    
     // Alternatively, you can get the collection bundle file that contains the image database for recognition
-    NSString* bundlePath = [[NSBundle mainBundle] pathForResource:@"c68aa5c3f6164c3abb6dcdc5fa698ee9" ofType: @"zip"];
+    NSString* bundlePath = [[NSBundle mainBundle] pathForResource:@"imagerecognitionExample" ofType: @"zip"];
     
     // And add it to the device
     [mCollectionManager addCollectionFromBundle:bundlePath withOnProgress:^(float progress) {
         NSLog(@"Add bundle progress: %f", progress);
-    } andOnSuccess:^(CraftARCollection *collection) {
+    } andOnSuccess:^(CraftAROnDeviceCollection *collection) {
         // On success, we load the collection for recognition
         [myself loadDemoCollection: collection];
     } andOnError:^(CraftARError *error) {
         NSLog(@"Error adding collection: %@", [error localizedDescription]);
     }];
-     */
+    
 }
 
-- (void) loadDemoCollection: (CraftARCollection*) collection {
+- (void) loadDemoCollection: (CraftAROnDeviceCollection*) collection {
     
     self._loadingView.hidden = NO;
     MainScreenViewController* myself = self;
@@ -133,10 +133,9 @@
         myself._loadingView.hidden = YES;
         myself._finderModeRecognitionButton.enabled = YES;
         myself._singleShotRecognitionButton.enabled = YES;
-        myself._finderModeRecognitionButton.hidden = NO;
-        myself._singleShotRecognitionButton.hidden = NO;
-
-    } andOnError:^(CraftARError *error) {
+        myself._finderModeRecognitionButtonImage.hidden = NO;
+        myself._singleShotRecognitionButtonImage.hidden = NO;
+    } andOnError:^(NSError *error) {
         NSLog(@"Error adding collection: %@", [error localizedDescription]);
     }];
 }

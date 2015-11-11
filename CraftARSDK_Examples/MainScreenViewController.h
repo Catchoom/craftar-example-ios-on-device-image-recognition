@@ -25,7 +25,9 @@
 @interface MainScreenViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIButton* _singleShotRecognitionButton;
+@property (weak, nonatomic) IBOutlet UIImageView* _singleShotRecognitionButtonImage;
 @property (weak, nonatomic) IBOutlet UIButton* _finderModeRecognitionButton;
+@property (weak, nonatomic) IBOutlet UIImageView* _finderModeRecognitionButtonImage;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *_loadingView;
 
 - (IBAction)buttonPressed:(id)sender;

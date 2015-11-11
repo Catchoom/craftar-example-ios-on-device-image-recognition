@@ -20,11 +20,11 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 #import "OnDeviceRecognitionFinderModeViewController.h"
-#import <CraftAROnDeviceRecognitionSDK/CraftARSDK_IR.h>
+#import <CraftAROnDeviceRecognitionSDK/CraftARSDK.h>
 #import <CraftAROnDeviceRecognitionSDK/CraftAROnDeviceIR.h>
 
 @interface OnDeviceRecognitionFinderModeViewController () <CraftARSDKProtocol, SearchProtocol, UIAlertViewDelegate> {
-    CraftARSDK_IR *_sdk;
+    CraftARSDK *_sdk;
     CraftAROnDeviceIR *_oir;
     bool _captureStarted;
     NSDate *mSearchStartTime;
@@ -55,7 +55,7 @@
     [super viewWillAppear:animated];
     
     // setup the CraftAR SDK
-    _sdk = [CraftARSDK_IR sharedCraftARSDK_IR];
+    _sdk = [CraftARSDK sharedCraftARSDK];
     
     // Become delegate of the SDK to receive capture initialization callbacks
     _sdk.delegate = self;
@@ -108,7 +108,7 @@
         
         NSString* alertText = [NSString stringWithFormat:@"Item found: '%@'", item.name];
         if (results.count > 1) {
-            alertText = [alertText stringByAppendingString: [NSString stringWithFormat:@" and %d more", results.count -1]];
+            alertText = [alertText stringByAppendingString: [NSString stringWithFormat:@" and %d more", (int)results.count -1]];
         }
         
         UIAlertView *alert = [[UIAlertView alloc] init];
@@ -147,7 +147,7 @@
 #pragma mark view lifecycle
 
 - (void) viewWillDisappear:(BOOL)animated {
-    [[_sdk getCamera] stopCapture];
+    [_sdk  stopCapture];
     [_sdk stopFinder];
     [super viewWillDisappear:animated];
 }

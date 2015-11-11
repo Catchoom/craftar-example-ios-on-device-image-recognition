@@ -21,11 +21,11 @@
 // DEALINGS IN THE SOFTWARE.
 
 #import "OnDeviceRecognitionSingleShotViewController.h"
-#import <CraftAROnDeviceRecognitionSDK/CraftARSDK_IR.h>
+#import <CraftAROnDeviceRecognitionSDK/CraftARSDK.h>
 #import <CraftAROnDeviceRecognitionSDK/CraftAROnDeviceIR.h>
 
 @interface OnDeviceRecognitionSingleShotViewController () <CraftARSDKProtocol, SearchProtocol> {
-    CraftARSDK_IR *_sdk;
+    CraftARSDK *_sdk;
     CraftAROnDeviceIR *_oir;
 }
 
@@ -53,7 +53,7 @@
     [super viewWillAppear:animated];
     
     // setup the CraftAR SDK
-    _sdk = [CraftARSDK_IR sharedCraftARSDK_IR];
+    _sdk = [CraftARSDK sharedCraftARSDK];
     
     // Become delegate of the SDK to receive capture initialization callbacks
     _sdk.delegate = self;
@@ -100,7 +100,7 @@
         
         NSString* alertText = [NSString stringWithFormat:@"Item found: '%@'", item.name];
         if (resultItems.count > 1) {
-            alertText = [alertText stringByAppendingString: [NSString stringWithFormat:@" and %d more", resultItems.count -1]];
+            alertText = [alertText stringByAppendingString: [NSString stringWithFormat:@" and %d more", (int)resultItems.count -1]];
         }
         
         UIAlertView *alert = [[UIAlertView alloc] init];
@@ -140,7 +140,7 @@
 #pragma mark view lifecycle
 
 - (void) viewWillDisappear:(BOOL)animated {
-    [[_sdk getCamera] stopCapture];
+    [_sdk stopCapture];
     [super viewWillDisappear:animated];
 }
 
