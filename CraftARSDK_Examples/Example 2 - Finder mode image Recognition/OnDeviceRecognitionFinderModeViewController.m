@@ -97,7 +97,7 @@
 }
 
 
-- (void) didGetSearchResults:(NSArray *)results {
+- (void) processSearchResults:(NSArray *)results {
     if (results.count > 0) {
         self._scanningOverlay.hidden = YES;
         [_sdk stopFinder];
@@ -133,7 +133,7 @@
 }
 
 
-- (void) didFailSearchWithError:(CraftARError *)error {
+- (void) searchFailedWithError:(CraftARError *)error {
     self._scanningOverlay.hidden = NO;
     [self._scanningOverlay setNeedsDisplay];
     [_sdk startFinder];

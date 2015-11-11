@@ -82,6 +82,10 @@
         UIStoryboard *exampleStoryBoard = [UIStoryboard storyboardWithName:@"FinderMode" bundle:nil];
         target = (UIViewController *)[exampleStoryBoard instantiateViewControllerWithIdentifier:@"RecognitionFinderModeViewController"];
         target.navigationItem.title = @"Finder Mode Image Recognition";
+    } else if (sender == self._extendedSearchButton) {
+        UIStoryboard *exampleStoryBoard = [UIStoryboard storyboardWithName:@"SingleShot-ExtendedSearch" bundle:nil];
+        target = (UIViewController *)[exampleStoryBoard instantiateViewControllerWithIdentifier:@"ExtendedSearchViewController"];
+        target.navigationItem.title = @"Extended Search";
     }
     [self.navigationController pushViewController:target animated:YES];
 }
@@ -93,7 +97,7 @@
 - (void) addDemoCollection {
     self._loadingView.hidden = NO;
     MainScreenViewController* myself = self;
-    /*
+    
     // Add Collection bundle from the CraftAR Service
     [mCollectionManager addCollectionWithToken:@"catchoomcooldemo" withOnProgress:^(float progress) {
         NSLog(@"Add bundle progress: %f", progress);
@@ -102,9 +106,9 @@
         [myself loadDemoCollection: collection];
     } andOnError:^(NSError *error) {
         NSLog(@"Error adding collection: %@", [error localizedDescription]);
-    }];*/
+    }];
     
-    
+    /*
     // Alternatively, you can get the collection bundle file that contains the image database for recognition
     NSString* bundlePath = [[NSBundle mainBundle] pathForResource:@"imagerecognitionExample" ofType: @"zip"];
     
@@ -117,6 +121,7 @@
     } andOnError:^(CraftARError *error) {
         NSLog(@"Error adding collection: %@", [error localizedDescription]);
     }];
+     */
     
 }
 

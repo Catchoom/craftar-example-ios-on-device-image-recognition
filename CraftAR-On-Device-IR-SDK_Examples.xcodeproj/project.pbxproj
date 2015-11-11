@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A000C5AC1992805E002A9786 /* Image Recognition.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A000C5AB1992805E002A9786 /* Image Recognition.jpg */; };
-		A000C5B6199282AA002A9786 /* SingleShot.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A000C5B0199282AA002A9786 /* SingleShot.storyboard */; };
 		A01F3D821845FA5A003D8D62 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A01F3D801845FA5A003D8D62 /* InfoPlist.strings */; };
 		A01F3D841845FA5A003D8D62 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A01F3D831845FA5A003D8D62 /* main.m */; };
 		A01F3D881845FA5A003D8D62 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A01F3D871845FA5A003D8D62 /* AppDelegate.m */; };
@@ -27,11 +26,14 @@
 		A0ADF4141BF342A200FD9E0A /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A0ADF4131BF342A200FD9E0A /* libc++.tbd */; };
 		A0ADF4161BF342AD00FD9E0A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A0ADF4151BF342AD00FD9E0A /* libz.tbd */; };
 		A0ADF4181BF342DA00FD9E0A /* CraftARResourcesODIR.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A0ADF4171BF342DA00FD9E0A /* CraftARResourcesODIR.bundle */; };
-		A0ADF4191BF3468600FD9E0A /* CraftAROnDeviceRecognitionSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01635361B185DF5008D6762 /* CraftAROnDeviceRecognitionSDK.framework */; };
 		A0ADF41B1BF34DFE00FD9E0A /* imagerecognitionExample.zip in Resources */ = {isa = PBXBuildFile; fileRef = A0ADF41A1BF34DFE00FD9E0A /* imagerecognitionExample.zip */; };
 		A0ADF4471BF3831B00FD9E0A /* FinderMode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0ADF4421BF3831B00FD9E0A /* FinderMode.storyboard */; };
 		A0ADF4481BF3831B00FD9E0A /* OnDeviceRecognitionFinderModeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0ADF4441BF3831B00FD9E0A /* OnDeviceRecognitionFinderModeViewController.m */; };
-		A0ADF44B1BF384A800FD9E0A /* OnDeviceRecognitionSingleShotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0ADF44A1BF384A800FD9E0A /* OnDeviceRecognitionSingleShotViewController.m */; };
+		A0ADF4561BF385FA00FD9E0A /* ExtendedSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0ADF4541BF385FA00FD9E0A /* ExtendedSearchViewController.m */; };
+		A0ADF4571BF385FA00FD9E0A /* SingleShot-ExtendedSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0ADF4551BF385FA00FD9E0A /* SingleShot-ExtendedSearch.storyboard */; };
+		A0ADF45C1BF3865500FD9E0A /* OnDeviceRecognitionSingleShotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0ADF45A1BF3865500FD9E0A /* OnDeviceRecognitionSingleShotViewController.m */; };
+		A0ADF45D1BF3865500FD9E0A /* SingleShot.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0ADF45B1BF3865500FD9E0A /* SingleShot.storyboard */; };
+		A0ADF45F1BF38E7B00FD9E0A /* CraftAROnDeviceRecognitionSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0ADF45E1BF38E7B00FD9E0A /* CraftAROnDeviceRecognitionSDK.framework */; };
 		A0D096821855E42100D231F0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D096811855E42100D231F0 /* MobileCoreServices.framework */; };
 		A0D096841855E42F00D231F0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D096831855E42F00D231F0 /* SystemConfiguration.framework */; };
 		A0D096881855E45000D231F0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D096871855E45000D231F0 /* AVFoundation.framework */; };
@@ -41,8 +43,6 @@
 
 /* Begin PBXFileReference section */
 		A000C5AB1992805E002A9786 /* Image Recognition.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Image Recognition.jpg"; path = "Reference images/Image Recognition.jpg"; sourceTree = "<group>"; };
-		A000C5B0199282AA002A9786 /* SingleShot.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SingleShot.storyboard; sourceTree = "<group>"; };
-		A01635361B185DF5008D6762 /* CraftAROnDeviceRecognitionSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CraftAROnDeviceRecognitionSDK.framework; path = CraftARSDK_Examples/ExternalFrameworks/CraftAROnDeviceRecognitionSDK.framework; sourceTree = "<group>"; };
 		A01F3D741845FA5A003D8D62 /* On-Device-IR-CraftAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On-Device-IR-CraftAR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A01F3D7F1845FA5A003D8D62 /* CraftARSDK_Examples-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CraftARSDK_Examples-Info.plist"; sourceTree = "<group>"; };
 		A01F3D811845FA5A003D8D62 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -70,8 +70,13 @@
 		A0ADF4421BF3831B00FD9E0A /* FinderMode.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FinderMode.storyboard; sourceTree = "<group>"; };
 		A0ADF4431BF3831B00FD9E0A /* OnDeviceRecognitionFinderModeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnDeviceRecognitionFinderModeViewController.h; sourceTree = "<group>"; };
 		A0ADF4441BF3831B00FD9E0A /* OnDeviceRecognitionFinderModeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnDeviceRecognitionFinderModeViewController.m; sourceTree = "<group>"; };
-		A0ADF4491BF384A800FD9E0A /* OnDeviceRecognitionSingleShotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnDeviceRecognitionSingleShotViewController.h; sourceTree = "<group>"; };
-		A0ADF44A1BF384A800FD9E0A /* OnDeviceRecognitionSingleShotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnDeviceRecognitionSingleShotViewController.m; sourceTree = "<group>"; };
+		A0ADF4531BF385FA00FD9E0A /* ExtendedSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtendedSearchViewController.h; sourceTree = "<group>"; };
+		A0ADF4541BF385FA00FD9E0A /* ExtendedSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtendedSearchViewController.m; sourceTree = "<group>"; };
+		A0ADF4551BF385FA00FD9E0A /* SingleShot-ExtendedSearch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "SingleShot-ExtendedSearch.storyboard"; sourceTree = "<group>"; };
+		A0ADF4591BF3865500FD9E0A /* OnDeviceRecognitionSingleShotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnDeviceRecognitionSingleShotViewController.h; sourceTree = "<group>"; };
+		A0ADF45A1BF3865500FD9E0A /* OnDeviceRecognitionSingleShotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnDeviceRecognitionSingleShotViewController.m; sourceTree = "<group>"; };
+		A0ADF45B1BF3865500FD9E0A /* SingleShot.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SingleShot.storyboard; sourceTree = "<group>"; };
+		A0ADF45E1BF38E7B00FD9E0A /* CraftAROnDeviceRecognitionSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CraftAROnDeviceRecognitionSDK.framework; path = CraftARSDK_Examples/ExternalFrameworks/CraftAROnDeviceRecognitionSDK.framework; sourceTree = "<group>"; };
 		A0D096811855E42100D231F0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		A0D096831855E42F00D231F0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A0D096851855E43D00D231F0 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
@@ -91,30 +96,20 @@
 				A0D0968A1855E46C00D231F0 /* CoreMedia.framework in Frameworks */,
 				A0D096881855E45000D231F0 /* AVFoundation.framework in Frameworks */,
 				A0D096841855E42F00D231F0 /* SystemConfiguration.framework in Frameworks */,
+				A0ADF45F1BF38E7B00FD9E0A /* CraftAROnDeviceRecognitionSDK.framework in Frameworks */,
 				A0D096821855E42100D231F0 /* MobileCoreServices.framework in Frameworks */,
-				A0ADF4191BF3468600FD9E0A /* CraftAROnDeviceRecognitionSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A000C5AD199282AA002A9786 /* Example 1 - Single shot Image Recognition */ = {
-			isa = PBXGroup;
-			children = (
-				A0ADF4491BF384A800FD9E0A /* OnDeviceRecognitionSingleShotViewController.h */,
-				A0ADF44A1BF384A800FD9E0A /* OnDeviceRecognitionSingleShotViewController.m */,
-				A000C5B0199282AA002A9786 /* SingleShot.storyboard */,
-			);
-			path = "Example 1 - Single shot Image Recognition";
-			sourceTree = "<group>";
-		};
 		A01F3D6B1845FA5A003D8D62 = {
 			isa = PBXGroup;
 			children = (
 				A02D5EFA1B62926800919274 /* Pods.framework */,
-				A01635361B185DF5008D6762 /* CraftAROnDeviceRecognitionSDK.framework */,
 				A0ADF4171BF342DA00FD9E0A /* CraftARResourcesODIR.bundle */,
+				A0ADF45E1BF38E7B00FD9E0A /* CraftAROnDeviceRecognitionSDK.framework */,
 				A01F3D7D1845FA5A003D8D62 /* CraftARSDK_Examples */,
 				A01F3D761845FA5A003D8D62 /* Frameworks */,
 				A01F3D751845FA5A003D8D62 /* Products */,
@@ -146,8 +141,9 @@
 		A01F3D7D1845FA5A003D8D62 /* CraftARSDK_Examples */ = {
 			isa = PBXGroup;
 			children = (
-				A000C5AD199282AA002A9786 /* Example 1 - Single shot Image Recognition */,
+				A0ADF4581BF3865500FD9E0A /* Example 1 - Single shot Image Recognition */,
 				A0ADF43D1BF3831B00FD9E0A /* Example 2 - Finder mode Image Recognition */,
+				A0ADF4521BF385FA00FD9E0A /* Example 3 - Extended Search */,
 				A01F3D861845FA5A003D8D62 /* AppDelegate.h */,
 				A01F3D871845FA5A003D8D62 /* AppDelegate.m */,
 				A084A2FB1875BD1100EF452B /* Main.storyboard */,
@@ -206,6 +202,26 @@
 			);
 			name = "Example 2 - Finder mode Image Recognition";
 			path = "Example 2 - Finder mode image Recognition";
+			sourceTree = "<group>";
+		};
+		A0ADF4521BF385FA00FD9E0A /* Example 3 - Extended Search */ = {
+			isa = PBXGroup;
+			children = (
+				A0ADF4531BF385FA00FD9E0A /* ExtendedSearchViewController.h */,
+				A0ADF4541BF385FA00FD9E0A /* ExtendedSearchViewController.m */,
+				A0ADF4551BF385FA00FD9E0A /* SingleShot-ExtendedSearch.storyboard */,
+			);
+			path = "Example 3 - Extended Search";
+			sourceTree = "<group>";
+		};
+		A0ADF4581BF3865500FD9E0A /* Example 1 - Single shot Image Recognition */ = {
+			isa = PBXGroup;
+			children = (
+				A0ADF4591BF3865500FD9E0A /* OnDeviceRecognitionSingleShotViewController.h */,
+				A0ADF45A1BF3865500FD9E0A /* OnDeviceRecognitionSingleShotViewController.m */,
+				A0ADF45B1BF3865500FD9E0A /* SingleShot.storyboard */,
+			);
+			path = "Example 1 - Single shot Image Recognition";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,11 +289,12 @@
 				A039ABD018A4F0510050D6F7 /* questionMark.png in Resources */,
 				A039ABC818A4F0510050D6F7 /* craftAR_c.png in Resources */,
 				A039ABCC18A4F0510050D6F7 /* craftAR_logo@2x.png in Resources */,
+				A0ADF45D1BF3865500FD9E0A /* SingleShot.storyboard in Resources */,
 				A000C5AC1992805E002A9786 /* Image Recognition.jpg in Resources */,
+				A0ADF4571BF385FA00FD9E0A /* SingleShot-ExtendedSearch.storyboard in Resources */,
 				A039ABCE18A4F0510050D6F7 /* play.png in Resources */,
 				A0ADF4181BF342DA00FD9E0A /* CraftARResourcesODIR.bundle in Resources */,
 				A039ABCA18A4F0510050D6F7 /* craftAR_logo-iPad@2x.png in Resources */,
-				A000C5B6199282AA002A9786 /* SingleShot.storyboard in Resources */,
 				A0ADF4471BF3831B00FD9E0A /* FinderMode.storyboard in Resources */,
 				A039ABCF18A4F0510050D6F7 /* play@2x.png in Resources */,
 				A039ABD118A4F0510050D6F7 /* questionMark@2x.png in Resources */,
@@ -309,8 +326,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A01F3DAA1846043C003D8D62 /* MainScreenViewController.m in Sources */,
+				A0ADF4561BF385FA00FD9E0A /* ExtendedSearchViewController.m in Sources */,
 				A0ADF4481BF3831B00FD9E0A /* OnDeviceRecognitionFinderModeViewController.m in Sources */,
-				A0ADF44B1BF384A800FD9E0A /* OnDeviceRecognitionSingleShotViewController.m in Sources */,
+				A0ADF45C1BF3865500FD9E0A /* OnDeviceRecognitionSingleShotViewController.m in Sources */,
 				A01F3D881845FA5A003D8D62 /* AppDelegate.m in Sources */,
 				A01F3D841845FA5A003D8D62 /* main.m in Sources */,
 			);
@@ -412,7 +430,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/CraftARSDK_Examples/ExternalFrameworks",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/craftar-sdk-ios-v4-azpizkjhbzccpdgkirapwkmriqog/Build/Products/Debug-iphoneos",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CraftARSDK_Examples/CraftARSDK_Examples-Prefix.pch";
@@ -442,7 +459,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/CraftARSDK_Examples/ExternalFrameworks",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/craftar-sdk-ios-v4-azpizkjhbzccpdgkirapwkmriqog/Build/Products/Debug-iphoneos",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CraftARSDK_Examples/CraftARSDK_Examples-Prefix.pch";
