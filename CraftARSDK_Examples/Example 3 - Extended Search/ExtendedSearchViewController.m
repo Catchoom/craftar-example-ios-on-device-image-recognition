@@ -100,9 +100,10 @@
 - (void) cloudSetup {
     
     
+    ExtendedSearchController* searchController = mExtendedSearchController;
     mCloudRecognition = [CraftARCloudRecognition sharedCloudImageRecognition];
     [mCloudRecognition setCollectionWithToken:CLOUD_COLLECTION_TOKEN onSuccess:^{
-        mExtendedSearchController.mReadyForCloudRecognition = YES;
+        searchController.mReadyForCloudRecognition = YES;
     } andOnError:^(NSError *error) {
         NSLog(@"Could not set collection for Cloud recognition: %@", error.localizedDescription);
     }];
