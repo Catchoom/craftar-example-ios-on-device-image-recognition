@@ -75,7 +75,7 @@
     // Get On Device Image Recognition class (for on-device searches)
     // and set it as the search controller delegate for the SDK
     _oir = [CraftAROnDeviceIR sharedCraftAROnDeviceIR];
-    _sdk.searchControllerDelegate = _oir;
+    _sdk.searchControllerDelegate = _oir.mSearchController;
     
     // Set the view controller as delegate of the OnDeviceIR to recieve the
     // search results

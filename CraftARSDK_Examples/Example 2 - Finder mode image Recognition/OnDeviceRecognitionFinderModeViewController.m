@@ -84,7 +84,7 @@
     // the SDK will take care of sending the camera capture frames to the search controller
     // and to manage the Finder Mode status.
     _oir = [CraftAROnDeviceIR sharedCraftAROnDeviceIR];
-    _sdk.searchControllerDelegate = _oir;
+    _sdk.searchControllerDelegate = _oir.mSearchController;
     
     // Set the view controller as delegate of the OnDeviceIR to recieve the
     // search results
