@@ -34,6 +34,7 @@
 		A0ADF45C1BF3865500FD9E0A /* OnDeviceRecognitionSingleShotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0ADF45A1BF3865500FD9E0A /* OnDeviceRecognitionSingleShotViewController.m */; };
 		A0ADF45D1BF3865500FD9E0A /* SingleShot.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0ADF45B1BF3865500FD9E0A /* SingleShot.storyboard */; };
 		A0ADF45F1BF38E7B00FD9E0A /* CraftAROnDeviceRecognitionSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0ADF45E1BF38E7B00FD9E0A /* CraftAROnDeviceRecognitionSDK.framework */; };
+		A0ADF4621BF494B400FD9E0A /* ExtendedSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0ADF4611BF494B300FD9E0A /* ExtendedSearchController.m */; };
 		A0D096821855E42100D231F0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D096811855E42100D231F0 /* MobileCoreServices.framework */; };
 		A0D096841855E42F00D231F0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D096831855E42F00D231F0 /* SystemConfiguration.framework */; };
 		A0D096881855E45000D231F0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D096871855E45000D231F0 /* AVFoundation.framework */; };
@@ -77,6 +78,8 @@
 		A0ADF45A1BF3865500FD9E0A /* OnDeviceRecognitionSingleShotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnDeviceRecognitionSingleShotViewController.m; sourceTree = "<group>"; };
 		A0ADF45B1BF3865500FD9E0A /* SingleShot.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SingleShot.storyboard; sourceTree = "<group>"; };
 		A0ADF45E1BF38E7B00FD9E0A /* CraftAROnDeviceRecognitionSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CraftAROnDeviceRecognitionSDK.framework; path = CraftARSDK_Examples/ExternalFrameworks/CraftAROnDeviceRecognitionSDK.framework; sourceTree = "<group>"; };
+		A0ADF4601BF494B300FD9E0A /* ExtendedSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtendedSearchController.h; sourceTree = "<group>"; };
+		A0ADF4611BF494B300FD9E0A /* ExtendedSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtendedSearchController.m; sourceTree = "<group>"; };
 		A0D096811855E42100D231F0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		A0D096831855E42F00D231F0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A0D096851855E43D00D231F0 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
@@ -210,6 +213,8 @@
 				A0ADF4531BF385FA00FD9E0A /* ExtendedSearchViewController.h */,
 				A0ADF4541BF385FA00FD9E0A /* ExtendedSearchViewController.m */,
 				A0ADF4551BF385FA00FD9E0A /* SingleShot-ExtendedSearch.storyboard */,
+				A0ADF4601BF494B300FD9E0A /* ExtendedSearchController.h */,
+				A0ADF4611BF494B300FD9E0A /* ExtendedSearchController.m */,
 			);
 			path = "Example 3 - Extended Search";
 			sourceTree = "<group>";
@@ -325,6 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0ADF4621BF494B400FD9E0A /* ExtendedSearchController.m in Sources */,
 				A01F3DAA1846043C003D8D62 /* MainScreenViewController.m in Sources */,
 				A0ADF4561BF385FA00FD9E0A /* ExtendedSearchViewController.m in Sources */,
 				A0ADF4481BF3831B00FD9E0A /* OnDeviceRecognitionFinderModeViewController.m in Sources */,

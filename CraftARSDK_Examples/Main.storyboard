@@ -362,6 +362,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="_extendedSearchButton" destination="8SH-lM-dEe" id="sg7-c2-tAy"/>
+                        <outlet property="_extendedSearchButtonImage" destination="bha-Gx-l8g" id="i3r-vb-Eaf"/>
                         <outlet property="_finderModeRecognitionButton" destination="5Ra-jv-O0f" id="bzA-hR-qth"/>
                         <outlet property="_finderModeRecognitionButtonImage" destination="6yG-Qo-qy7" id="Vxo-PE-8ku"/>
                         <outlet property="_loadingView" destination="hdL-Yr-jGP" id="Qae-gh-DVo"/>

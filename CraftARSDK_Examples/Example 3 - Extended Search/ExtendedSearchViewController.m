@@ -22,22 +22,20 @@
 
 #import "ExtendedSearchViewController.h"
 #import <CraftAROnDeviceRecognitionSDK/CraftARSDK.h>
-#import <CraftAROnDeviceRecognitionSDK/CraftAROnDeviceIR.h>
-#import <CraftAROnDeviceRecognitionSDK/CraftARCollectionManager.h>
 #import <CraftAROnDeviceRecognitionSDK/CraftARProtocols.h>
 #import <CraftAROnDeviceRecognitionSDK/CraftARCloudRecognition.h>
 #import <CraftAROnDeviceRecognitionSDK/CrsConnect.h>
 
-#define ON_DEVICE_COLLECTION_TOKEN @"imagerecognition"
+#import "ExtendedSearchController.h"
+
 #define CLOUD_COLLECTION_TOKEN     @"cloudrecognition"
 
 
-@interface ExtendedSearchViewController () <CraftARSDKProtocol, CameraSearchController> {
+@interface ExtendedSearchViewController () <CraftARSDKProtocol, SearchProtocol> {
     CraftARSDK *mSDK;
-    CraftAROnDeviceIR *mOnDeviceIR;
-    CraftARCollectionManager *mCollectionManager;
     CraftARCloudRecognition *mCloudRecognition;
-    BOOL mReadyForCloudRecognition;
+    
+    ExtendedSearchController* mExtendedSearchController;
 }
 
 @end
@@ -73,6 +71,7 @@
     [mSDK startCaptureWithView:self._preview];
     self._previewOverlay.hidden = YES;
     self._scanningOverlay.hidden = YES;
+    
 }
 
 #pragma mark -
@@ -83,67 +82,18 @@
 - (void) didStartCapture {
     self._previewOverlay.hidden = NO;
     
+    // Initialize the extended search controller and set the delegate
+    // to receive search responses
+    mExtendedSearchController = [[ExtendedSearchController alloc] init];
+    mExtendedSearchController.delegate = self;
     
-    // Set this class as the CameraSearchController
-    // with this, we will receive the events from the SDK when
+    // Set the extended search controller instance as the CameraSearchController
+    // with this, it will receive the events from the SDK when
     // the SingleShotSearch and FindeMode are used.
-    [[CraftARSDK sharedCraftARSDK] setSearchControllerDelegate:myself];
+    [[CraftARSDK sharedCraftARSDK] setSearchControllerDelegate:mExtendedSearchController];
     
-    [self setUpOnDevice];
     [self cloudSetup];
 }
-
-
-#pragma mark On-device search setup
-
-- (void) setUpOnDevice {
-    // Get the Collection Manager
-    mCollectionManager = [CraftARCollectionManager sharedCollectionManager];
-    
-    // Retrieve the collection if it is already in the device
-    NSError* error;
-    CraftAROnDeviceCollection* colleciton = [mCollectionManager getCollectionWithToken:ON_DEVICE_COLLECTION_TOKEN andError: &error];
-    if (error != nil) {
-        NSLog(@"Error getting collection: %@", error.localizedDescription);
-    }
-    
-    if (colleciton) {
-        // Load the collection found in the device
-        [self loadCollection:colleciton];
-    } else {
-        // Add Collection bundle from the CraftAR Service
-        ExtendedSearchViewController* myself = self;
-        [mCollectionManager addCollectionWithToken:ON_DEVICE_COLLECTION_TOKEN withOnProgress:^(float progress) {
-            NSLog(@"Add bundle progress: %f", progress);
-        } andOnSuccess:^(CraftAROnDeviceCollection *collection) {
-            // On success, we load the collection for recognition
-            [myself loadCollection: collection];
-        } andOnError:^(NSError *error) {
-            NSLog(@"Error adding collection: %@", [error localizedDescription]);
-        }];
-    }
-}
-
-- (void) loadCollection: (CraftAROnDeviceCollection*) collection {
-    // Get On Device Image Recognition class (for on-device searches)
-    mOnDeviceIR = [CraftAROnDeviceIR sharedCraftAROnDeviceIR];
-    
-    // Load the collection before doing any searches
-    ExtendedSearchViewController* myself = self;
-    [mOnDeviceIR setCollection:collection setActive:YES withOnProgress:^(float progress) {
-        NSLog(@"Load collection progress: %f", progress);
-    } onSuccess:^{
-        // Now the collection is ready to search
-        NSLog(@"On-device collection is ready to search");
-        // Enable the search button
-        myself._previewOverlay.hidden = NO;
-    } andOnError:^(NSError *error) {
-        NSLog(@"Error adding collection: %@", [error localizedDescription]);
-    }];
-}
-
-#pragma mark -
-
 
 #pragma mark Cloud search setup
 
@@ -152,7 +102,7 @@
     
     mCloudRecognition = [CraftARCloudRecognition sharedCloudImageRecognition];
     [mCloudRecognition setCollectionWithToken:CLOUD_COLLECTION_TOKEN onSuccess:^{
-        mReadyForCloudRecognition = YES;
+        mExtendedSearchController.mReadyForCloudRecognition = YES;
     } andOnError:^(NSError *error) {
         NSLog(@"Could not set collection for Cloud recognition: %@", error.localizedDescription);
     }];
@@ -169,49 +119,7 @@
 }
 
 
-#pragma mark CameraSearchController implementation
-
-- (void) didTakePicture:(UIImage *)image {
-    // First, perform on-device Image Recongition
-    CraftARQueryImage* queryImage = [[CraftARQueryImage alloc] initWithUIImage:image];
-    [mOnDeviceIR searchWithImage:queryImage withOnResults:^(NSArray *results) {
-        
-        // If no results are found, Extend search to the cloud, otherwise process results
-        if (results.count == 0 && mReadyForCloudRecognition) {
-            NSLog(@"Nothing found on the device, extend search to the cloud");
-            [mCloudRecognition searchWithImage:queryImage withOnResults:^(NSArray *results) {
-                [self processSearchResults:results];
-            } andOnError:^(NSError *error) {
-                [self searchFailedWithError:error];
-            }];
-            return;
-        }
-        [self processSearchResults:results];
-    } andOnError:^(NSError *error) {
-        [self searchFailedWithError:error];
-    }];
-}
-
-- (void) didReceivePreviewFrame:(VideoFrame *)image {
-    // Do nothing if you are not implementing Finder mode
-}
-
-- (void) didActivateFinderMode {
-    // Do nothing if you are not implementing Finder mode
-}
-
-- (void) didDeactivateFinderMode {
-    // Do nothing if you are not implementing Finder mode
-}
-
-- (BOOL) isFinding {
-    // Always false if you are not implementing Finder mode
-    return false;
-}
-
-#pragma mark -
-
-- (void) processSearchResults:(NSArray *)resultItems {
+- (void) didGetSearchResults:(NSArray *)resultItems {
     self._scanningOverlay.hidden = YES;
     
     if ([resultItems count] >= 1) {
@@ -248,7 +156,7 @@
     [[mSDK getCamera] restartCapture];
 }
 
-- (void) searchFailedWithError:(CraftARError *)error {    // Check the error type
+- (void) didFailSearchWithError:(NSError *)error {    // Check the error type
     NSLog(@"Error calling CRS: %@", [error localizedDescription]);
     self._previewOverlay.hidden = NO;
     self._scanningOverlay.hidden = YES;

@@ -25,6 +25,10 @@
 #import <CraftAROnDeviceRecognitionSDK/CraftARCollectionManager.h>
 #import <CraftAROnDeviceRecognitionSDK/CraftAROnDeviceIR.h>
 
+#define ON_DEVICE_COLLECTION_TOKEN  @"imagerecognition"
+
+
+
 @interface MainScreenViewController () {
     CraftARSDK* mSDK;
     CraftARCollectionManager* mCollectionManager;
@@ -50,7 +54,7 @@
     
     // Get the collection if it is already in the device
     CraftARError* error;
-    CraftAROnDeviceCollection* demoCollection = nil;//[mCollectionManager getCollectionWithToken:@"imagerecognition" andError:&error];
+    CraftAROnDeviceCollection* demoCollection = [mCollectionManager getCollectionWithToken:ON_DEVICE_COLLECTION_TOKEN andError:&error];
     
     // if it is not in the device load it
     if (demoCollection == nil) {
@@ -66,8 +70,10 @@
     
     self._finderModeRecognitionButton.enabled = NO;
     self._singleShotRecognitionButton.enabled = NO;
+    self._extendedSearchButton.enabled = NO;
     self._finderModeRecognitionButtonImage.hidden = YES;
     self._singleShotRecognitionButtonImage.hidden = YES;
+    self._extendedSearchButtonImage.hidden = YES;
     
 }
 
@@ -99,7 +105,7 @@
     MainScreenViewController* myself = self;
     
     // Add Collection bundle from the CraftAR Service
-    [mCollectionManager addCollectionWithToken:@"catchoomcooldemo" withOnProgress:^(float progress) {
+    [mCollectionManager addCollectionWithToken:ON_DEVICE_COLLECTION_TOKEN withOnProgress:^(float progress) {
         NSLog(@"Add bundle progress: %f", progress);
     } andOnSuccess:^(CraftAROnDeviceCollection *collection) {
         // On success, we load the collection for recognition
@@ -138,8 +144,10 @@
         myself._loadingView.hidden = YES;
         myself._finderModeRecognitionButton.enabled = YES;
         myself._singleShotRecognitionButton.enabled = YES;
+        myself._extendedSearchButton.enabled = YES;
         myself._finderModeRecognitionButtonImage.hidden = NO;
         myself._singleShotRecognitionButtonImage.hidden = NO;
+        myself._extendedSearchButtonImage.hidden = NO;
     } andOnError:^(NSError *error) {
         NSLog(@"Error adding collection: %@", [error localizedDescription]);
     }];
