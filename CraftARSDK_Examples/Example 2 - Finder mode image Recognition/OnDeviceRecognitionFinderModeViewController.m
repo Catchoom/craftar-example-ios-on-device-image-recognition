@@ -134,6 +134,7 @@
 
 
 - (void) didFailSearchWithError:(NSError *)error {
+    NSLog(@"Search failed: %@", error.localizedDescription);
     self._scanningOverlay.hidden = NO;
     [self._scanningOverlay setNeedsDisplay];
     [_sdk startFinder];
