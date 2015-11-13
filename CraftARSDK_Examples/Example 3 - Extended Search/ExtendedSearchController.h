@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <CraftAROnDeviceRecognitionSDK/CraftARProtocols.h>
+#import <CraftAROnDeviceRecognitionSDK/BaseSearchController.h>
 
-@interface ExtendedSearchController :  NSObject <CameraSearchController>
+@interface ExtendedSearchController :  BaseSearchController
 
 
 /**
