@@ -30,6 +30,31 @@
 
 #define CLOUD_COLLECTION_TOKEN     @"cloudrecognition"
 
+/**
+ * This example shows how to perform extended image recognition using the single-shot mode,
+ * using on-device image recognition + cloud image recognition.
+ *
+ * The example will load an on-device collection and search always first in the on-device collection.
+ * If nothing is found in the on-device collection, and there's connectivity, it will search it in
+ * the cloud collection, which is supposed to have a different content than the on-device collection, so
+ * we expect to find a match there.
+ *
+ * Extended image recognition is useful if you want to pre-fetch some images into the application (in an on-device collection),
+ * because they're more likely to be scanned, so you skip searching into the cloud for all those requests. Note that the size of
+ * on-device collection affects the size of the app, but the size of the cloud collection don't.
+ *
+ *
+ * How to use:
+ *
+ * You can find the Reference images in the Reference Images folder of this project:
+ *
+ * The on-device collection contains the images biz_card and shopping_kart.
+ * The cloud collection in addition contains the images kid_with_mobile and craftar_logo.
+ *
+ * So, if you point to the image biz_card, it will be recognized using the on-device module. If you point to another image, a search
+ * in the cloud will be performed. In the case you were pointing to the kid_with_mobile or to the craftar_logo images, the search in the cloud
+ * will find the match.
+ * **/
 
 @interface ExtendedSearchViewController () <CraftARSDKProtocol, SearchProtocol> {
     CraftARSDK *mSDK;

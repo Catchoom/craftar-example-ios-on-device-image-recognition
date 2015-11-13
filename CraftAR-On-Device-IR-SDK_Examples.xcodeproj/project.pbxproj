@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A000C5AC1992805E002A9786 /* Image Recognition.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A000C5AB1992805E002A9786 /* Image Recognition.jpg */; };
 		A01F3D821845FA5A003D8D62 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A01F3D801845FA5A003D8D62 /* InfoPlist.strings */; };
 		A01F3D841845FA5A003D8D62 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A01F3D831845FA5A003D8D62 /* main.m */; };
 		A01F3D881845FA5A003D8D62 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A01F3D871845FA5A003D8D62 /* AppDelegate.m */; };
@@ -35,6 +34,10 @@
 		A0ADF45D1BF3865500FD9E0A /* SingleShot.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0ADF45B1BF3865500FD9E0A /* SingleShot.storyboard */; };
 		A0ADF4621BF494B400FD9E0A /* ExtendedSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0ADF4611BF494B300FD9E0A /* ExtendedSearchController.m */; };
 		A0ADF4871BF5186A00FD9E0A /* CraftAROnDeviceRecognitionSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0ADF4861BF5186A00FD9E0A /* CraftAROnDeviceRecognitionSDK.framework */; };
+		A0ADF5031BF6013C00FD9E0A /* kid_with_mobile.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A0ADF5021BF6013C00FD9E0A /* kid_with_mobile.jpg */; };
+		A0ADF5051BF6014300FD9E0A /* biz_card.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A0ADF5041BF6014300FD9E0A /* biz_card.jpg */; };
+		A0ADF5071BF6014E00FD9E0A /* shopping_kart.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A0ADF5061BF6014E00FD9E0A /* shopping_kart.jpg */; };
+		A0ADF5091BF6015400FD9E0A /* craftar_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A0ADF5081BF6015400FD9E0A /* craftar_logo.jpg */; };
 		A0D096821855E42100D231F0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D096811855E42100D231F0 /* MobileCoreServices.framework */; };
 		A0D096841855E42F00D231F0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D096831855E42F00D231F0 /* SystemConfiguration.framework */; };
 		A0D096881855E45000D231F0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D096871855E45000D231F0 /* AVFoundation.framework */; };
@@ -43,7 +46,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A000C5AB1992805E002A9786 /* Image Recognition.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Image Recognition.jpg"; path = "Reference images/Image Recognition.jpg"; sourceTree = "<group>"; };
 		A01F3D741845FA5A003D8D62 /* On-Device-IR-CraftAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "On-Device-IR-CraftAR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A01F3D7F1845FA5A003D8D62 /* CraftARSDK_Examples-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CraftARSDK_Examples-Info.plist"; sourceTree = "<group>"; };
 		A01F3D811845FA5A003D8D62 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -80,6 +82,10 @@
 		A0ADF4601BF494B300FD9E0A /* ExtendedSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtendedSearchController.h; sourceTree = "<group>"; };
 		A0ADF4611BF494B300FD9E0A /* ExtendedSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtendedSearchController.m; sourceTree = "<group>"; };
 		A0ADF4861BF5186A00FD9E0A /* CraftAROnDeviceRecognitionSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CraftAROnDeviceRecognitionSDK.framework; path = CraftARSDK_Examples/ExternalFrameworks/CraftAROnDeviceRecognitionSDK.framework; sourceTree = "<group>"; };
+		A0ADF5021BF6013C00FD9E0A /* kid_with_mobile.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kid_with_mobile.jpg; sourceTree = "<group>"; };
+		A0ADF5041BF6014300FD9E0A /* biz_card.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = biz_card.jpg; sourceTree = "<group>"; };
+		A0ADF5061BF6014E00FD9E0A /* shopping_kart.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shopping_kart.jpg; sourceTree = "<group>"; };
+		A0ADF5081BF6015400FD9E0A /* craftar_logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = craftar_logo.jpg; sourceTree = "<group>"; };
 		A0D096811855E42100D231F0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		A0D096831855E42F00D231F0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A0D096851855E43D00D231F0 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
@@ -191,7 +197,10 @@
 		A039ABB918A4E0360050D6F7 /* Reference images */ = {
 			isa = PBXGroup;
 			children = (
-				A000C5AB1992805E002A9786 /* Image Recognition.jpg */,
+				A0ADF5041BF6014300FD9E0A /* biz_card.jpg */,
+				A0ADF5021BF6013C00FD9E0A /* kid_with_mobile.jpg */,
+				A0ADF5081BF6015400FD9E0A /* craftar_logo.jpg */,
+				A0ADF5061BF6014E00FD9E0A /* shopping_kart.jpg */,
 			);
 			name = "Reference images";
 			sourceTree = "<group>";
@@ -287,7 +296,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0ADF41B1BF34DFE00FD9E0A /* imagerecognitionExample.zip in Resources */,
+				A0ADF5071BF6014E00FD9E0A /* shopping_kart.jpg in Resources */,
 				A084A2FC1875BD1100EF452B /* Main.storyboard in Resources */,
+				A0ADF5051BF6014300FD9E0A /* biz_card.jpg in Resources */,
+				A0ADF5091BF6015400FD9E0A /* craftar_logo.jpg in Resources */,
 				A01F3D821845FA5A003D8D62 /* InfoPlist.strings in Resources */,
 				A0F1DF2F184E5269006E20A0 /* Images.xcassets in Resources */,
 				A039ABCB18A4F0510050D6F7 /* craftAR_logo.png in Resources */,
@@ -295,8 +307,8 @@
 				A039ABC818A4F0510050D6F7 /* craftAR_c.png in Resources */,
 				A039ABCC18A4F0510050D6F7 /* craftAR_logo@2x.png in Resources */,
 				A0ADF45D1BF3865500FD9E0A /* SingleShot.storyboard in Resources */,
-				A000C5AC1992805E002A9786 /* Image Recognition.jpg in Resources */,
 				A0ADF4571BF385FA00FD9E0A /* SingleShot-ExtendedSearch.storyboard in Resources */,
+				A0ADF5031BF6013C00FD9E0A /* kid_with_mobile.jpg in Resources */,
 				A039ABCE18A4F0510050D6F7 /* play.png in Resources */,
 				A0ADF4181BF342DA00FD9E0A /* CraftARResourcesODIR.bundle in Resources */,
 				A039ABCA18A4F0510050D6F7 /* craftAR_logo-iPad@2x.png in Resources */,
