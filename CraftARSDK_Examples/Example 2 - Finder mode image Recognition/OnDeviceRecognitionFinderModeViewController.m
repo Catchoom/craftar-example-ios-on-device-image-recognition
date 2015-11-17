@@ -20,11 +20,11 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 #import "OnDeviceRecognitionFinderModeViewController.h"
-#import <CraftAROnDeviceRecognitionSDK/CraftARSDK_IR.h>
+#import <CraftAROnDeviceRecognitionSDK/CraftARSDK.h>
 #import <CraftAROnDeviceRecognitionSDK/CraftAROnDeviceIR.h>
 
 @interface OnDeviceRecognitionFinderModeViewController () <CraftARSDKProtocol, SearchProtocol, UIAlertViewDelegate> {
-    CraftARSDK_IR *_sdk;
+    CraftARSDK *_sdk;
     CraftAROnDeviceIR *_oir;
     bool _captureStarted;
     NSDate *mSearchStartTime;
@@ -55,7 +55,7 @@
     [super viewWillAppear:animated];
     
     // setup the CraftAR SDK
-    _sdk = [CraftARSDK_IR sharedCraftARSDK_IR];
+    _sdk = [CraftARSDK sharedCraftARSDK];
     
     // Become delegate of the SDK to receive capture initialization callbacks
     _sdk.delegate = self;
@@ -84,7 +84,7 @@
     // the SDK will take care of sending the camera capture frames to the search controller
     // and to manage the Finder Mode status.
     _oir = [CraftAROnDeviceIR sharedCraftAROnDeviceIR];
-    _sdk.searchControllerDelegate = _oir;
+    _sdk.searchControllerDelegate = _oir.mSearchController;
     
     // Set the view controller as delegate of the OnDeviceIR to recieve the
     // search results
@@ -108,7 +108,7 @@
         
         NSString* alertText = [NSString stringWithFormat:@"Item found: '%@'", item.name];
         if (results.count > 1) {
-            alertText = [alertText stringByAppendingString: [NSString stringWithFormat:@" and %d more", results.count -1]];
+            alertText = [alertText stringByAppendingString: [NSString stringWithFormat:@" and %d more", (int)results.count -1]];
         }
         
         UIAlertView *alert = [[UIAlertView alloc] init];
@@ -133,7 +133,8 @@
 }
 
 
-- (void) didFailSearchWithError:(CraftARError *)error {
+- (void) didFailSearchWithError:(NSError *)error {
+    NSLog(@"Search failed: %@", error.localizedDescription);
     self._scanningOverlay.hidden = NO;
     [self._scanningOverlay setNeedsDisplay];
     [_sdk startFinder];
@@ -147,7 +148,7 @@
 #pragma mark view lifecycle
 
 - (void) viewWillDisappear:(BOOL)animated {
-    [[_sdk getCamera] stopCapture];
+    [_sdk  stopCapture];
     [_sdk stopFinder];
     [super viewWillDisappear:animated];
 }

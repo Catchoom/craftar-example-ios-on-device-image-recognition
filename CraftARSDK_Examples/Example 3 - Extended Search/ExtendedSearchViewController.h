@@ -22,20 +22,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainScreenViewController : UIViewController
+@interface ExtendedSearchViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIButton* _singleShotRecognitionButton;
-@property (weak, nonatomic) IBOutlet UIImageView* _singleShotRecognitionButtonImage;
-@property (weak, nonatomic) IBOutlet UIButton* _finderModeRecognitionButton;
-@property (weak, nonatomic) IBOutlet UIImageView* _finderModeRecognitionButtonImage;
-@property (weak, nonatomic) IBOutlet UIButton* _extendedSearchButton;
-@property (weak, nonatomic) IBOutlet UIImageView* _extendedSearchButtonImage;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *_loadingView;
+@property (weak, nonatomic) IBOutlet UIView *_preview;
+@property (weak, nonatomic) IBOutlet UIView *_previewOverlay;
+@property (weak, nonatomic) IBOutlet UIView *_scanningOverlay;
 
-- (IBAction)buttonPressed:(id)sender;
-
-
-- (IBAction)signUpURL:(id)sender;
-- (IBAction)craftARProductURL:(id)sender;
+- (IBAction)snapPhotoToSearch:(id)sender;
 
 @end

@@ -20,18 +20,52 @@
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
-#import "OnDeviceRecognitionSingleShotViewController.h"
+#import "ExtendedSearchViewController.h"
 #import <CraftAROnDeviceRecognitionSDK/CraftARSDK.h>
-#import <CraftAROnDeviceRecognitionSDK/CraftAROnDeviceIR.h>
+#import <CraftAROnDeviceRecognitionSDK/CraftARProtocols.h>
+#import <CraftAROnDeviceRecognitionSDK/CraftARCloudRecognition.h>
+#import <CraftAROnDeviceRecognitionSDK/CrsConnect.h>
 
-@interface OnDeviceRecognitionSingleShotViewController () <CraftARSDKProtocol, SearchProtocol> {
-    CraftARSDK *_sdk;
-    CraftAROnDeviceIR *_oir;
+#import "ExtendedSearchController.h"
+
+#define CLOUD_COLLECTION_TOKEN     @"cloudrecognition"
+
+/**
+ * This example shows how to perform extended image recognition using the single-shot mode,
+ * using on-device image recognition + cloud image recognition.
+ *
+ * The example will load an on-device collection and search always first in the on-device collection.
+ * If nothing is found in the on-device collection, and there's connectivity, it will search it in
+ * the cloud collection, which is supposed to have a different content than the on-device collection, so
+ * we expect to find a match there.
+ *
+ * Extended image recognition is useful if you want to pre-fetch some images into the application (in an on-device collection),
+ * because they're more likely to be scanned, so you skip searching into the cloud for all those requests. Note that the size of
+ * on-device collection affects the size of the app, but the size of the cloud collection don't.
+ *
+ *
+ * How to use:
+ *
+ * You can find the Reference images in the Reference Images folder of this project:
+ *
+ * The on-device collection contains the images biz_card and shopping_kart.
+ * The cloud collection in addition contains the images kid_with_mobile and craftar_logo.
+ *
+ * So, if you point to the image biz_card, it will be recognized using the on-device module. If you point to another image, a search
+ * in the cloud will be performed. In the case you were pointing to the kid_with_mobile or to the craftar_logo images, the search in the cloud
+ * will find the match.
+ * **/
+
+@interface ExtendedSearchViewController () <CraftARSDKProtocol, SearchProtocol> {
+    CraftARSDK *mSDK;
+    CraftARCloudRecognition *mCloudRecognition;
+    
+    ExtendedSearchController* mExtendedSearchController;
 }
 
 @end
 
-@implementation OnDeviceRecognitionSingleShotViewController
+@implementation ExtendedSearchViewController
 
 #pragma mark view initialization
 
@@ -53,15 +87,16 @@
     [super viewWillAppear:animated];
     
     // setup the CraftAR SDK
-    _sdk = [CraftARSDK sharedCraftARSDK];
+    mSDK = [CraftARSDK sharedCraftARSDK];
     
     // Become delegate of the SDK to receive capture initialization callbacks
-    _sdk.delegate = self;
+    mSDK.delegate = self;
     
     // Initialize the video capture on our preview view.
-    [_sdk startCaptureWithView:self._preview];
-    self._previewOverlay.hidden = NO;
+    [mSDK startCaptureWithView:self._preview];
+    self._previewOverlay.hidden = YES;
     self._scanningOverlay.hidden = YES;
+    
 }
 
 #pragma mark -
@@ -72,23 +107,43 @@
 - (void) didStartCapture {
     self._previewOverlay.hidden = NO;
     
-    // Get On Device Image Recognition class (for on-device searches)
-    // and set it as the search controller delegate for the SDK
-    _oir = [CraftAROnDeviceIR sharedCraftAROnDeviceIR];
-    _sdk.searchControllerDelegate = _oir.mSearchController;
+    // Initialize the extended search controller and set the delegate
+    // to receive search responses
+    mExtendedSearchController = [[ExtendedSearchController alloc] init];
+    mExtendedSearchController.delegate = self;
     
-    // Set the view controller as delegate of the OnDeviceIR to recieve the
-    // search results
-    _oir.delegate = self;
+    // Set the extended search controller instance as the CameraSearchController
+    // with this, it will receive the events from the SDK when
+    // the SingleShotSearch and FindeMode are used.
+    [[CraftARSDK sharedCraftARSDK] setSearchControllerDelegate:mExtendedSearchController];
+    
+    [self cloudSetup];
 }
+
+#pragma mark Cloud search setup
+
+- (void) cloudSetup {
+    
+    
+    ExtendedSearchController* searchController = mExtendedSearchController;
+    mCloudRecognition = [CraftARCloudRecognition sharedCloudImageRecognition];
+    [mCloudRecognition setCollectionWithToken:CLOUD_COLLECTION_TOKEN onSuccess:^{
+        searchController.mReadyForCloudRecognition = YES;
+    } andOnError:^(NSError *error) {
+        NSLog(@"Could not set collection for Cloud recognition: %@", error.localizedDescription);
+    }];
+}
+
+#pragma mark -
+
 
 - (IBAction)snapPhotoToSearch:(id)sender {
     self._previewOverlay.hidden = YES;
     self._scanningOverlay.hidden = NO;
     [self._scanningOverlay setNeedsDisplay];
-    [_sdk singleShotSearch];
-    
+    [mSDK singleShotSearch];
 }
+
 
 - (void) didGetSearchResults:(NSArray *)resultItems {
     self._scanningOverlay.hidden = YES;
@@ -124,14 +179,14 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     self._previewOverlay.hidden = NO;
-    [[_sdk getCamera] restartCapture];
+    [[mSDK getCamera] restartCapture];
 }
 
-- (void) didFailSearchWithError:(CraftARError *)error {    // Check the error type
+- (void) didFailSearchWithError:(NSError *)error {    // Check the error type
     NSLog(@"Error calling CRS: %@", [error localizedDescription]);
     self._previewOverlay.hidden = NO;
     self._scanningOverlay.hidden = YES;
-    [[_sdk getCamera] restartCapture];
+    [[mSDK getCamera] restartCapture];
 }
 
 #pragma mark -
@@ -140,7 +195,7 @@
 #pragma mark view lifecycle
 
 - (void) viewWillDisappear:(BOOL)animated {
-    [_sdk stopCapture];
+    [mSDK stopCapture];
     [super viewWillDisappear:animated];
 }
 
