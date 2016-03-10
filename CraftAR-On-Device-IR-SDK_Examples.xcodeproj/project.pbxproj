@@ -245,7 +245,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A01F3DA01845FA5B003D8D62 /* Build configuration list for PBXNativeTarget "CraftARSDK_Examples" */;
 			buildPhases = (
-				A039ABAA18991F4C0050D6F7 /* ShellScript */,
 				A01F3D701845FA5A003D8D62 /* Sources */,
 				A01F3D711845FA5A003D8D62 /* Frameworks */,
 				A01F3D721845FA5A003D8D62 /* Resources */,
@@ -320,22 +319,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		A039ABAA18991F4C0050D6F7 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [ ! -d \"$PROJECT_DIR/CraftARSDK_Examples/ExternalFrameworks/CraftAROnDeviceRecognitionSDK.framework\" ]; then\n    echo \"error: Missing CraftARSDK files in CraftARSDK_Examples/ExternalFrameworks/\" 1>&2;\n    osascript $PROJECT_DIR/CraftARSDK_Examples/scripts/launch_sdk_download \"$PROJECT_DIR\" &\n    exit 1\nfi\n\nif [ ! -d \"$PROJECT_DIR/CraftARSDK_Examples/ExternalFrameworks/CraftARResourcesODIR.bundle\" ]; then\n    echo \"error: Missing CraftARSDK files in CraftARSDK_Examples/ExternalFrameworks/\" 1>&2;\n    osascript $PROJECT_DIR/CraftARSDK_Examples/scripts/launch_sdk_download \"$PROJECT_DIR\" &\n    exit 1\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A01F3D701845FA5A003D8D62 /* Sources */ = {
