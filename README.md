@@ -2,43 +2,28 @@
 
 ### Introduction
 
-The CraftAR Service for [Augmented Reality and Image Recognition](http://catchoom.com/product/craftar/augmented-reality-and-image-recognition/) is a  service
-that allows you to build a wide range of __Image Recognition__ and __Augmented Reality__ applications
-and services.
+CraftAR allows to create recognition only and Augmented Reality (AR)
+experiences using the CraftAR Service and its Mobile SDK (‘Mobile SDK’).
 
 With CraftAR, you can create amazing apps that provide digital content
 for real-life objects like printed media, packaging among others. You
-can use our online web panel or APIs, to upload images to be recognized and set
-content to display upon recognition in your CraftAR-powered app.
+can use our online web panel or APIs, to upload images to be recognised and set
+AR content to display upon recognition in your CraftAR-powered
+app.
 
-The [iOS On-Device Image Recognition SDK](http://catchoom.com/documentation/on-device-image-recognition-sdk/ios-on-device-image-recognition-sdk/) focuses on opening the camera in the mobile device and performing
-Image Recognition requests on the device. The display of the result of the request
-of each is up to you.
+### Running the examples
 
-This document describes mainly the Examples of different uses of the Service and the On-Device Image Recognition SDK.
-General use of the SDK can be found in the Documentation webpage for the [iOS On-Device Image Recognition SDK](http://catchoom.com/documentation/on-device-image-recognition-sdk/ios-on-device-image-recognition-sdk/). Complete SDK documentation of the classes can be found within the distribution of the SDK itself.
+This repository contains the project files and source code of some examples
+that show how to use the CraftAR On-device Image Recognition SDK.
 
+The examples **are included in the SDK distribution with the SDK already linked to
+the project**. The easiest way to use the examples is to [download the SDK](http://catchoom.com/documentation/on-device-image-recognition-sdk/ios-on-device-image-recognition-sdk/), open the xCode project and hit the run button.
 
-### How to use the examples
+### Requirements
 
-This repository comes with an Xcode project of an iOS app with several
-examples that show how to use the SDK.
-
-To run the examples follow these steps:
-
-1.  Open the CraftAR-On-Device-IR-SDK_Examples.xcodeproj project.
-2.  Integrate the CraftAR On-Device Image Recognition SDK for iOS into the Xcode project (see [below](#step-by-step-guide)).
-3.  Select an iOS 8 device (notice that the project will not compile for the simulator).
-4.  Hit the run button.
-
-### Add CraftAR On-Device Image Recognition SDK to the Example project
-
-#### Requirements
-
-To build the project or use the library, you will need XCode 6 or newer,
+To build the project or use the library, you will need XCode 7 or newer,
 and at least the iOS 8.0 SDK.
 
-#### Step-by-step guide
-1.  Download the [CraftAR On-Device Image Recognition SDK for iOS](http://catchoom.com/product/craftar/augmented-reality-and-image-recognition-sdk/#download-mobile-sdk).
-2.  Unzip the package
-3.  Using the Finder, drag the CraftAROnDeviceImageRecognitionSDK.framework, the Pods.framework and the CraftARResources.bundle files into the CraftARSDK_Examples/ExternalFrameworks folder of this project.
+### Integrate the SDK in your own project
+
+Follow [this tutorial](http://support.catchoom.com/customer/portal/articles/1887554-tutorial-set-up-the-ios-project-in-xcode) for instructions on how to integrate the SDK in your xCode projects.
