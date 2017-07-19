@@ -1,6 +1,18 @@
 {
   "images" : [
     {
+      "size" : "20x20",
+      "idiom" : "iphone",
+      "filename" : "craftAR_40-2.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "20x20",
+      "idiom" : "iphone",
+      "filename" : "craftAR_60-1.png",
+      "scale" : "3x"
+    },
+    {
       "size" : "29x29",
       "idiom" : "iphone",
       "filename" : "craftAR_29.png",
@@ -13,8 +25,9 @@
       "scale" : "2x"
     },
     {
-      "idiom" : "iphone",
       "size" : "29x29",
+      "idiom" : "iphone",
+      "filename" : "craftar_87-1.png",
       "scale" : "3x"
     },
     {
@@ -24,8 +37,9 @@
       "scale" : "2x"
     },
     {
-      "idiom" : "iphone",
       "size" : "40x40",
+      "idiom" : "iphone",
+      "filename" : "craftar_120-2.png",
       "scale" : "3x"
     },
     {
@@ -47,9 +61,22 @@
       "scale" : "2x"
     },
     {
-      "idiom" : "iphone",
       "size" : "60x60",
+      "idiom" : "iphone",
+      "filename" : "craftar_120-1.png",
       "scale" : "3x"
+    },
+    {
+      "size" : "20x20",
+      "idiom" : "ipad",
+      "filename" : "craftAR_20-1.png",
+      "scale" : "1x"
+    },
+    {
+      "size" : "20x20",
+      "idiom" : "ipad",
+      "filename" : "craftAR_40-1.png",
+      "scale" : "2x"
     },
     {
       "size" : "29x29",
@@ -102,13 +129,19 @@
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "catchoom_head_76.png",
+      "filename" : "craftar_76-1.png",
       "scale" : "1x"
     },
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "catchoom_head_152.png",
+      "filename" : "craftar_152-1.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "83.5x83.5",
+      "idiom" : "ipad",
+      "filename" : "craftar_167-1.png",
       "scale" : "2x"
     }
   ],
