@@ -92,10 +92,11 @@
     // Become delegate of the SDK to receive capture initialization callbacks
     mSDK.delegate = self;
     
-    // Initialize the video capture on our preview view.
-    [mSDK startCaptureWithView:self._preview];
     self._previewOverlay.hidden = YES;
     self._scanningOverlay.hidden = YES;
+    
+    // Initialize the video capture on our preview view.
+    [mSDK startCaptureWithView:self._preview];
     
 }
 
@@ -106,7 +107,7 @@
 
 - (void) didStartCapture {
     self._previewOverlay.hidden = NO;
-    
+
     // Initialize the extended search controller and set the delegate
     // to receive search responses
     mExtendedSearchController = [[ExtendedSearchController alloc] init];
