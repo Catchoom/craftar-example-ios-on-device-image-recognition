@@ -61,7 +61,7 @@
         NSLog(@"Error getting collection: %@", [error localizedDescription]);
         [self addDemoCollection];
     } else {
-        [demoCollection syncWithOnDone:^(CraftAROnDeviceCollection *collection, int itemDownloads, int downloadErrors) {
+        [demoCollection syncWithOnDone:^(CraftAROnDeviceCollection *collection, CraftARError *error) {
             [self loadDemoCollection: demoCollection];
         } andOnError:^(NSError *error) {
             NSLog(@"Error synchronizing collection: %@", [error localizedDescription]);
