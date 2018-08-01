@@ -17,7 +17,7 @@ This repository contains the project files and source code of some examples
 that show how to use the CraftAR On-device Image Recognition SDK.
 
 The examples **are included in the SDK distribution with the SDK already linked to
-the project**. The easiest way to use the examples is to [download the SDK](http://catchoom.com/documentation/on-device-image-recognition-sdk/ios-on-device-image-recognition-sdk/), open the xCode project and hit the run button.
+the project**. The easiest way to use the examples is to [download the SDK](http://documentation.catchoom.com/documentation/on-device-image-recognition-sdk/ios-on-device-image-recognition-sdk/), open the xCode project and hit the run button.
 
 ### Requirements
 
